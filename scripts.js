@@ -1,11 +1,11 @@
 window.addEventListener('load', () => {
-    const form = document.querySelector("#new-task-form");
+    const addForm = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const list_el = document.querySelector("#tasks");
 
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    addForm.addEventListener('submit', (e) => {
+        e.preventDefault();//
 
         const task = input.value;
 
@@ -13,10 +13,13 @@ window.addEventListener('load', () => {
         //     alert('please fill out the task');//create an alert window 
         //     return;
         // }
+
+
+        // create a div with allocated class name in the html.
         const task_el = document.createElement('div');
         task_el.classList.add('task');//
 
-
+        // create a div allocated class name in the html.
         const task_content_el = document.createElement('div');
         task_content_el.classList.add('content');
 
@@ -25,7 +28,7 @@ window.addEventListener('load', () => {
         const task_input_el = document.createElement('input');
         task_input_el.classList.add('text');
         task_input_el.type = 'text';
-        task_input_el.value = task;
+        task_input_el.value = task;//
         task_input_el.setAttribute('readonly', 'readonly');
 
         task_content_el.appendChild(task_input_el);
@@ -42,12 +45,12 @@ window.addEventListener('load', () => {
         task_delete_el.innerText = 'Delete';
 
 
-        task_actions_el.appendChild(task_edit_el);
-        task_actions_el.appendChild(task_delete_el);
+        task_actions_el.appendChild(task_edit_el);//
+        task_actions_el.appendChild(task_delete_el);//
 
-        task_el.appendChild(task_actions_el);
+        task_el.appendChild(task_actions_el);//
 
-        list_el.appendChild(task_el);
+        list_el.appendChild(task_el);//
 
         input.value = '';
 
